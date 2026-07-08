@@ -3,7 +3,7 @@
 ### Create Database
 - CREATE DATABASE bankdata
 
-### CREATE TABLE (RELATION)
+### Tables (RELATIONS)
 - accounts
 - branches
 - customers
@@ -35,19 +35,21 @@ CREATE TABLE branches (
 );
 ```
 
+<img width="504" height="541" alt="Screenshot 2026-07-08 at 12 05 16 PM" src="https://github.com/user-attachments/assets/9525889b-632b-486d-9904-3177b35a7fe6" />
+
 ### Insertion of values in table command
 ```
 INSERT INTO customers (first_name, last_name, city, email, join_date) VALUES  
-('Alice', 'Smith', 'New York', 'alice@example.com', '2025-01-10'),
-('Bob', 'Jones', 'London', 'bob@example.com', '2025-02-15'),
-('Charlie', 'Brown', 'New York', 'charlie@example.com', '2025-03-20'),
-('David', 'Wilson', 'Tokyo', 'david@example.com', '2025-04-05'),
-('Eve', 'Davis', 'Paris', 'eve@example.com', '2025-05-12'),
-('Frank', 'Miller', 'London', 'frank@example.com', '2025-06-01'),
-('Grace', 'Moore', 'New York', 'grace@example.com', '2025-07-18'),
-('Heidi', 'Taylor', 'Berlin', 'heidi@example.com', '2025-08-22'),
-('Ivan', 'Anderson', 'Tokyo', 'ivan@example.com', '2025-09-30'),
-('Judy', 'Thomas', 'Paris', 'judy@example.com', '2025-10-11');
+('vishal', 'singh', 'delhi', 'vishal@example.com', '2025-01-10'),
+('rohit', 'bisht', 'bhopal', 'rohit@example.com', '2025-02-15'),
+('kaustav', 'sahu', 'kolkata', 'kaustav@example.com', '2025-03-20'),
+('nitin', 'yadav', 'surat', 'nitin@example.com', '2025-04-05'),
+('rishabh', 'singh', 'lucknow', 'rishabh@example.com', '2025-05-12'),
+('abhisekh', 'thakur', 'kathmandu', 'abhisekh@example.com', '2025-06-01'),
+('aagman', 'verma', 'kathmandu', 'aagman@example.com', '2025-07-18'),
+('ansh', 'gupta', 'meerut', 'ansh@example.com', '2025-08-22'),
+('jatin', 'kumar', 'delhi', 'jatin@example.com', '2025-09-30'),
+('raghav', 'rajoria', 'delhi', 'raghav@example.com', '2025-10-11');
 
 INSERT INTO accounts (customer_id, balance, account_type, status) VALUES  
 (1, 5000.00, 'Savings', 'Active'), 
@@ -62,14 +64,33 @@ INSERT INTO accounts (customer_id, balance, account_type, status) VALUES
 (100, 300.00, 'Savings', 'Closed');
 
 INSERT INTO branches (branch_name, location, manager_name) VALUES  
-('Manhattan', 'NY, USA', 'Sarah Lane'), 
-('Canary Wharf', 'London, UK', 'Tom Hardy'),
-('Shinjuku', 'Tokyo, JP', 'Kenji Sato'), 
-('Le Marais', 'Paris, FR', 'Marie Curie'),
-('Mitte', 'Berlin, DE', 'Hans Muller'), 
-('Brooklyn', 'NY, USA', 'John Doe'),
-('Westminster', 'London, UK', 'Jane Eyre'), 
-('Ginza', 'Tokyo, JP', 'Yuki Tanaka'),
-('Montmartre', 'Paris, FR', 'Pierre Dubois'), 
-('Prenzlauer', 'Berlin, DE', 'Anna Schmidt');
+('delhi', 'INDIA', 'Aarav Sharma'), 
+('bhopal', 'MP, INDIA, UK', 'Vikram Singh'),
+('kolkata', 'WB, INDIA', 'Amit Patel'), 
+('surat', 'GUJARAT, INDIA', 'Priya Sharma'),
+('lucknow', 'UP, INDIAUP, INDIA', 'Rajesh Kumar'), 
+('noida', 'UP, INDIAUP, INDIA', 'Sanjay Gupta'),
+('noida', 'UP, INDIA, UK', 'Deepak Verma'), 
+('meerut', 'UP, INDIA', 'Anjali Desai'),
+('delhi', 'INDIA', 'Rohan Mehta'), 
+('delhi', 'INDIA', 'Neha Joshi');
 ```
+<img width="1000" height="758" alt="Screenshot 2026-07-08 at 12 16 04 PM" src="https://github.com/user-attachments/assets/5a4ea35a-35b0-48a5-961e-4d7fe276a247" />
+
+### All tables (Relations)
+```
+- SELECT * FROM accounts;
+- SELECT * FROM branches;
+- SELECT * FROM customers;
+```
+
+#### Accounts Table
+<img width="696" height="419" alt="Screenshot 2026-07-08 at 12 19 10 PM" src="https://github.com/user-attachments/assets/463879b5-5274-4a84-af0e-dc8ae077e786" />
+
+#### Branches Table
+<img width="713" height="467" alt="Screenshot 2026-07-08 at 12 19 27 PM" src="https://github.com/user-attachments/assets/8130ccea-ebad-45bd-a90a-713bfe9d9005" />
+
+### Customers Table
+<img width="884" height="435" alt="Screenshot 2026-07-08 at 12 19 44 PM" src="https://github.com/user-attachments/assets/0e6e746e-0697-4f02-a4e7-f2b7729f33ec" />
+
+
