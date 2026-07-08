@@ -33,6 +33,7 @@ FROM customers c
 INNER JOIN accounts a ON c.customer_id = a.customer_id
 WHERE a.status = 'Active';
 ```
+<img width="683" height="365" alt="Screenshot 2026-07-08 at 1 46 28 PM" src="https://github.com/user-attachments/assets/1ecb7195-e4de-4ca9-b22b-4746ae7fa2e5" />
 - Expected Output: 6 rows returned. All records matching orphaned IDs (99, 100, NULL) must be completely filtered out.
 
 #### TC-09: Unlinked Account Discoveries (Left Join Isolation)
@@ -43,6 +44,7 @@ FROM accounts a
 LEFT JOIN customers c ON a.customer_id = c.customer_id
 WHERE c.customer_id IS NULL;
 ```
+<img width="544" height="294" alt="Screenshot 2026-07-08 at 1 47 30 PM" src="https://github.com/user-attachments/assets/2d9f7962-5c22-4e76-b2cc-c09d3772e762" />
 - Expected Output: 3 rows returned (Identifies the rows with IDs: NULL, 99, and 100).
 
 - #### TC-10: Fiscal Data Aggregation (Grouped Summary)
@@ -52,6 +54,7 @@ SELECT account_type, SUM(balance) AS total_balance
 FROM accounts 
 GROUP BY account_type;
 ```
+<img width="535" height="242" alt="Screenshot 2026-07-08 at 1 48 38 PM" src="https://github.com/user-attachments/assets/2269bbb7-099e-4669-8eda-3f5bce98ff2c" />
 ##### Expected Output:
 - Savings: 25000.50
 - Checking: 9000.50
