@@ -21,3 +21,46 @@
 |:---|:---|:---|:---|:---|
 |TC-06|Null Value Processing|Insert an account containing a customer_id of NULL.|Pass (Record is added cleanly).|Pass (Standard behavior unless restricted).|
 |TC-07|Orphaned Data Validation|Insert an account pointing to a non-existent customer_id (e.g., 99).|Pass (Current system allows orphaned rows).|Fail / Error: Violates explicit foreign key rules.|
+
+### 3. Functional Queries & Aggregations (Expected Success)
+- Run these queries against your active database instance to test the logic of data extractions.
+
+#### TC-08: Active Customer to Account Relationship Match (Inner Join)
+- Objective: Verify matched accounts and display customer names.
+```
+SELECT c.first_name, c.last_name, a.account_type, a.balance 
+FROM customers c
+INNER JOIN accounts a ON c.customer_id = a.customer_id
+WHERE a.status = 'Active';
+```
+- Expected Output: 6 rows returned. All records matching orphaned IDs (99, 100, NULL) must be completely filtered out.
+
+#### TC-09: Unlinked Account Discoveries (Left Join Isolation)
+- Objective: Find all accounts without a matching customer profile.
+```
+SELECT a.account_id, a.customer_id, a.balance 
+FROM accounts a
+LEFT JOIN customers c ON a.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+```
+- Expected Output: 3 rows returned (Identifies the rows with IDs: NULL, 99, and 100).
+
+- #### TC-10: Fiscal Data Aggregation (Grouped Summary)
+- Objective: Calculate total balances across account category pools.
+```
+SELECT account_type, SUM(balance) AS total_balance 
+FROM accounts 
+GROUP BY account_type;
+```
+##### Expected Output:
+- Savings: 25000.50
+- Checking: 9000.50
+
+### 4. Edge Cases & Boundary Conditions
+|Test ID|	Test Objective	|SQL Action / Scenario|	Expected database Behavior|
+|:---|:---|:---|:---|
+|TC-11|Zero/Negative Parameters|Input financial balances of exactly 0.00 or negative values like -500.00.|Pass (Allowed unless a CHECK constraint rule is added).|
+|TC-12|Redundant Text Entries|Insert a new branch matching an existing name and location details.|Pass (Allowed unless a UNIQUE identifier is bound to the column).|
+|TC-13|Date Boundaries|Add a customer record with a future date placeholder (e.g., 2030-01-01).|Pass (Allowed unless time rules are validated via logic validation).|
+
+
