@@ -1,7 +1,7 @@
 # Bank Database
 
 ### Create Database
-- CREATE DATABASE bank data
+- CREATE DATABASE bankdata
 
 ### CREATE TABLE (RELATION)
 - accounts
@@ -9,7 +9,7 @@
 - customers
 
 ### Table Creation Commands
-''' CREATE TABLE customers (
+``` CREATE TABLE customers (
     customer_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50), 
     last_name VARCHAR(50),
@@ -35,7 +35,7 @@ CREATE TABLE branches (
 '''
 
 ### Insertion of values in table command
-''' INSERT INTO customers (first_name, last_name, city, email, join_date) VALUES  
+``` INSERT INTO customers (first_name, last_name, city, email, join_date) VALUES  
 ('Alice', 'Smith', 'New York', 'alice@example.com', '2025-01-10'),
 ('Bob', 'Jones', 'London', 'bob@example.com', '2025-02-15'),
 ('Charlie', 'Brown', 'New York', 'charlie@example.com', '2025-03-20'),
