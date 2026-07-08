@@ -32,7 +32,7 @@ CREATE TABLE branches (
     location VARCHAR(50), 
     manager_name VARCHAR(50)
 );
-'''
+```
 
 ### Insertion of values in table command
 ``` INSERT INTO customers (first_name, last_name, city, email, join_date) VALUES  
@@ -70,4 +70,4 @@ INSERT INTO branches (branch_name, location, manager_name) VALUES
 ('Ginza', 'Tokyo, JP', 'Yuki Tanaka'),
 ('Montmartre', 'Paris, FR', 'Pierre Dubois'), 
 ('Prenzlauer', 'Berlin, DE', 'Anna Schmidt');
-'''
+```
