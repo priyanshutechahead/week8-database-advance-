@@ -90,7 +90,23 @@ INSERT INTO branches (branch_name, location, manager_name) VALUES
 #### Branches Table
 <img width="713" height="467" alt="Screenshot 2026-07-08 at 12 19 27 PM" src="https://github.com/user-attachments/assets/8130ccea-ebad-45bd-a90a-713bfe9d9005" />
 
-### Customers Table
+#### Customers Table
 <img width="884" height="435" alt="Screenshot 2026-07-08 at 12 19 44 PM" src="https://github.com/user-attachments/assets/0e6e746e-0697-4f02-a4e7-f2b7729f33ec" />
+
+### List all tables in the current schema
+```
+\dt
+```
+
+### List all tables in all schemas
+```
+\dt *.*
+```
+
+### To see the table structure  (Columns and data type)
+```
+\d <table name>
+```
+
 
 
