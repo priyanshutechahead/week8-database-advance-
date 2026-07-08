@@ -18,6 +18,6 @@
 
 ### 2. Referential Integrity Tests (Orphaned Data Tracking)
 |Test ID|	Test Objective	|SQL Action / Scenario|	Current Schema Result|	Production Target Standard|
-|:---|:---|:---|:---|
+|:---|:---|:---|:---|:---|
 |TC-06|Null Value Processing|Insert an account containing a customer_id of NULL.|Pass (Record is added cleanly).|Pass (Standard behavior unless restricted).|
 |TC-07|Orphaned Data Validation|Insert an account pointing to a non-existent customer_id (e.g., 99).|Pass (Current system allows orphaned rows).|Fail / Error: Violates explicit foreign key rules.|
