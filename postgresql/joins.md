@@ -18,4 +18,6 @@
 - Pairs every single row from the first table with every single row from the second table. It does not use an ON clause. Since you have 10 customers and 10 branches, this query will generate exactly $10 \times 10 = 100$ rows.
 <img width="646" height="825" alt="Screenshot 2026-07-08 at 2 13 25 PM" src="https://github.com/user-attachments/assets/9e1e5ddd-40dd-4aeb-8e75-9d7593f7e118" />
 
-
+### Self Join (complex condition)
+- Self join is a regular join, but the table is joined with itself. Here is a complex query finding pairs of customers who happen to live in the same city, ensuring we don't match a person with themselves or repeat the same pair twice.
+<img width="790" height="361" alt="Screenshot 2026-07-08 at 2 15 00 PM" src="https://github.com/user-attachments/assets/f62bde55-9c01-43d3-b86d-64970a746e94" />
